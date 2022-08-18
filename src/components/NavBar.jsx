@@ -1,5 +1,4 @@
 import "./NavBar.css";
-import myLogo from "../images/mate-logo.png"
 
 function NavBar() {
   return (
@@ -7,7 +6,7 @@ function NavBar() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <img href="#" src={myLogo} alt="logo" id="logo" />
+            <img href="#" src="/images/mate-logo.png" alt="logo" id="logo" />
           </a>
           <button
             className="navbar-toggler"
