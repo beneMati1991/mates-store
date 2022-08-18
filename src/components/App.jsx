@@ -1,9 +1,11 @@
 import './App.css';
+import NavBar from './NavBar.jsx';
 
 function App() {
   return (
     <div className="App">
-      <h1>Mates Store</h1>
+      <NavBar />
+      <h1>Un Buen Mate</h1>
     </div>
   );
 }
