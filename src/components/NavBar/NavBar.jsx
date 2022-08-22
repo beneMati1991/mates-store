@@ -1,4 +1,5 @@
 import CartWidget from "./CartWidget";
+import ItemOption from "./ItemOption";
 import "./NavBar.css";
 
 function NavBar() {
@@ -25,28 +26,11 @@ function NavBar() {
             id="navbarColor01"
           >
             <ul className="navbar-nav justify-content-end">
-              <li className="nav-item">
-                <a className="nav-link active" href="#">
-                  Inicio
-                  <span className="visually-hidden">(current)</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Productos
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Como Comprar
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contacto
-                </a>
-              </li>
-              <CartWidget quantity='4' />
+              <ItemOption text="Inicio" />
+              <ItemOption text="Productos" />
+              <ItemOption text="Como Comprar" />
+              <ItemOption text="Contacto" />
+              <CartWidget quantity="4" />
             </ul>
           </div>
         </div>
