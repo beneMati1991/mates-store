@@ -1,11 +1,12 @@
 import './App.css';
-import NavBar from './NavBar.jsx';
+import NavBar from './NavBar/NavBar.jsx';
+import ItemListContainer from './ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <h1>Un Buen Mate</h1>
+      <ItemListContainer msg='Bienvenidos a mi tienda!'/>
     </div>
   );
 }
