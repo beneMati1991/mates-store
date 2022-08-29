@@ -1,25 +1,24 @@
-import React from "react";
-import ItemCount from "./../ItemCount/ItemCount";
-import Swal from "sweetalert2";
+import { React, useState, useEffect } from "react";
+import itemData from "./../../data/itemData";
+import ItemList from './../ItemList/ItemList';
 
-const ItemListContainer = ({ msg }) => {
-  function onAdd(count) {
-    Swal.fire(`Productos seleccionados: ${count}`);
-  }
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  return (
-    <div className="container-fluid pt-4">
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-10 text-center">
-          <h1>Un Buen Mate</h1>
-          <p>{msg}</p>
-        </div>
-        <div className="col-md-10">
-          <ItemCount stock={5} initial={1} onAdd={onAdd} />
-        </div>
-      </div>
-    </div>
-  );
+  useEffect(() => {
+    const getData = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(itemData);
+      }, 2000);
+    });
+
+    getData
+      .then((response) => setItems(response))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  return isLoading ? <h2>Cargando...</h2> : <ItemList list={items} />;;
 };
 
 export default ItemListContainer;

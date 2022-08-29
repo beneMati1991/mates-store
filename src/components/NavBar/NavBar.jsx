@@ -7,7 +7,7 @@ function NavBar() {
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/#">
             <img href="#" src="/images/mate-logo.png" alt="logo" id="logo" />
           </a>
           <button
