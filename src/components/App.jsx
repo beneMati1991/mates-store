@@ -3,6 +3,7 @@ import NavBar from "./NavBar/NavBar.jsx";
 import ItemListContainer from "./ItemListContainer/ItemListContainer";
 //import ItemCount from "./ItemCount/ItemCount.jsx";
 //import Swal from "sweetalert2";
+import ItemDetailContainer from "./ItemDetailContainer/ItemDetailContainer";
 
 function App() {
   /*function onAdd(count) {
@@ -23,6 +24,9 @@ function App() {
           </div> */}
           <div className="col-md-10">
             <ItemListContainer />
+          </div>
+          <div className="col-md-10">
+            <ItemDetailContainer />
           </div>
         </div>
       </div>
