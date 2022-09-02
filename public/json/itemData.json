@@ -1,7 +1,9 @@
 {
   "id": 1,
-  "title": "product1",
-  "description": "description1",
+  "title": "titleMate1",
+  "description": "descriptionMate1",
   "price": 100,
-  "pictureUrl": "product1.jpg"
+  "pictureUrl": "mate1.jpg",
+  "stock": 5,
+  "categoryId": 1
 }

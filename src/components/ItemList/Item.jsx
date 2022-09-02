@@ -1,23 +1,17 @@
 import React from "react";
-import useCounter from './../../hooks/useCounter';
+import { Link } from 'react-router-dom';
 
-const Item = ({ item, initial, onAdd }) => {
-  const { add, substract, count } = useCounter(item.stock, initial);
+const Item = ({ item }) => {
   return (
     <div className="card border-secondary mb-3" style={{ maxWidth: "20rem" }}>
       <div className="card-header">{item.title}</div>
       <div className="card-body">
         <p className="card-text">
-          <img href="#" src="/images/nofound.png" alt="logo" />
+          {item.stock === 0 ? <img src="/images/sinstock.png" alt="logo" /> : <img src="/images/nofound.png" alt="logo" />}
         </p>
-        <h4 className="card-title">Precio: {item.price}</h4>
-        <p className="card-text">Cantidad: {count}</p>
-        <div className="d-flex justify-content-center">
-            <button className="btn btn-light" onClick={substract}> - </button>
-            <button className="btn btn-dark" onClick={add}> + </button>
-        </div>
+        <h4 className="card-title">Precio: ${item.price}</h4>
         <div className="d-flex justify-content-center pt-2">
-          <button className="btn btn-primary" onClick={() => onAdd(count)} disabled={count===0}>Agregar al carrito</button>
+          <Link className='nav-link' to={`/item/${item.id}`}><button className="btn btn-primary">+ Detalles</button></Link>
         </div>
       </div>
     </div>
