@@ -1,5 +1,10 @@
-{
+[
+  {
     "categoryId": 1,
     "categoryDescription": "Mates"
+  },
+  {
+    "categoryId": 2,
+    "categoryDescription": "Termos"
   }
-  
+]

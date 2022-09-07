@@ -1,9 +1,47 @@
-{
-  "id": 1,
-  "title": "titleMate1",
-  "description": "descriptionMate1",
-  "price": 100,
-  "pictureUrl": "mate1.jpg",
-  "stock": 5,
-  "categoryId": 1
-}
+[
+  {
+    "id": 1,
+    "title": "titleMate1",
+    "description": "descriptionMate1",
+    "price": 100,
+    "pictureUrl": "mate1.png",
+    "stock": 5,
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "title": "titleMate2",
+    "description": "descriptionMate2",
+    "price": 200,
+    "pictureUrl": "mate2.png",
+    "stock": 2,
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "title": "titleMate3",
+    "description": "descriptionMate3",
+    "price": 300,
+    "pictureUrl": "mate3.png",
+    "stock": 30,
+    "categoryId": 1
+  },
+  {
+    "id": 4,
+    "title": "titleTermo1",
+    "description": "descriptionTermo1",
+    "price": 400,
+    "pictureUrl": "termo1.png",
+    "stock": 40,
+    "categoryId": 2
+  },
+  {
+    "id": 5,
+    "title": "titleTermo2",
+    "description": "descriptionTermo2",
+    "price": 500,
+    "pictureUrl": "termo2.png",
+    "stock": 0,
+    "categoryId": 2
+  }
+]
