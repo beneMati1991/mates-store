@@ -5,11 +5,12 @@ import ItemListContainer from './ItemListContainer/ItemListContainer';
 import Contact from './NavBar/Contact';
 import MenuBar from "./MenuBar/MenuBar";
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import { CartProvider } from "../context/CartContext";
 
 function App() {
 
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
         <NavBar/>
         <MenuBar/>
@@ -21,7 +22,7 @@ function App() {
           <Route path="*" element={<ItemListContainer/>}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 }
 
