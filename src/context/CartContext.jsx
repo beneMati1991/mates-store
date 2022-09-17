@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 const CartContext = createContext();
 
@@ -6,15 +7,26 @@ const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item, quantity) => {
-    const auxCart = cart;
-    auxCart.push({item: item, quantity: quantity});
-    setCart(auxCart)
-    console.log(cart);
+    const foundItem = cart.find(
+      (itemCart) => itemCart.item.id === item.id
+    )
+
+    if (foundItem) {
+      foundItem.quantity =quantity;
+      setCart([...cart])
+    }
+    else {
+      setCart([...cart, {id:uuidv4(), item: item, quantity: quantity}])
+    }
+    
   };
 
   const removeItem = (item) => {
-    const auxCart = cart.filter((itemCart) => itemCart.id !== item.id);
-    setCart(auxCart);
+    const filteredArray = cart.filter(
+      (itemCart) => itemCart.item.id !== item.id
+    );
+
+    setCart(filteredArray);
   };
 
   const clear = () => {
@@ -22,7 +34,7 @@ const CartProvider = (props) => {
   };
 
   const isInCart = (itemId) => {
-    const auxCart = cart.filter((itemCart) => itemCart.id !== itemId);
+    const auxCart = cart.filter((itemCart) => itemCart.item.id === itemId);
     if (auxCart.length === 0) {
       return false;
     } else {

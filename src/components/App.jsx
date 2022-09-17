@@ -16,7 +16,7 @@ function App() {
         <MenuBar/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>}></Route>
-          <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
+          <Route path='/category/:id' element={<ItemListContainer/>}></Route>
           <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
           <Route path='/contact' element={<Contact/>}></Route>
           <Route path="*" element={<ItemListContainer/>}></Route>

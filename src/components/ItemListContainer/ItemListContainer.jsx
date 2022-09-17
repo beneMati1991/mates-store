@@ -5,15 +5,15 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { categoryId } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     fetch("../json/itemData.json")
       .then((response) => response.json())
       .then((data) => {
-        if (categoryId) {
+        if (id) {
           const itemsCat = data.filter(
-            (item) => item.categoryId.toString() === categoryId
+            (item) => item.categoryId.toString() === id
           );
           setItems(itemsCat);
         } else {
@@ -22,7 +22,7 @@ const ItemListContainer = () => {
       })
       .catch((error) => console.error(error))
       .finally(() => setIsLoading(false));
-  }, [categoryId]);
+  }, [id]);
 
   return isLoading ? (
     <h2>Cargando...</h2>

@@ -5,12 +5,14 @@ import Swal from "sweetalert2";
 
 const ItemDetail = ({ item,  }) => {
 
-  const { addItem } = useContext(CartContext);
+  const { addItem, cart } = useContext(CartContext);
 
   function onAdd(count) {
     Swal.fire(`Productos seleccionados: ${item.id}, ${item.title}, ${item.id} y cantidad ${count}`);
     addItem(item, count)
   }
+
+  console.log(cart);
 
   return (
     <div className="container">
