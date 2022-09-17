@@ -5,7 +5,7 @@ const CartWidget = ({quantity}) => {
     <>
       <li className="nav-item">
         <a className="nav-link" href="/#">
-          <i className="fas fa-shopping-cart">{quantity}</i>
+          <i className="fas fa-shopping-cart">{quantity === 0 ? '' : quantity}</i>
         </a>
       </li>
     </>

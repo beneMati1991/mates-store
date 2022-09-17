@@ -21,9 +21,9 @@ const CartProvider = (props) => {
     
   };
 
-  const removeItem = (item) => {
+  const removeItem = (itemId) => {
     const filteredArray = cart.filter(
-      (itemCart) => itemCart.item.id !== item.id
+      (itemCart) => itemCart.item.id !== itemId
     );
 
     setCart(filteredArray);
@@ -32,6 +32,24 @@ const CartProvider = (props) => {
   const clear = () => {
     setCart([]);
   };
+
+  const getTotal = () => {
+    let total = 0;
+    cart.forEach(
+      (itemCart) => {
+        total += (itemCart.quantity * itemCart.item.price)
+    })
+    return total;
+  }
+
+  const getQuantity = () => {
+    let quantity = 0;
+    cart.forEach(
+      (itemCart) => {
+        quantity += itemCart.quantity
+    })
+    return quantity;
+  } 
 
   const isInCart = (itemId) => {
     const auxCart = cart.filter((itemCart) => itemCart.item.id === itemId);
@@ -45,7 +63,7 @@ const CartProvider = (props) => {
   return (
     <>
       <CartContext.Provider
-        value={{ cart, addItem, removeItem, clear, isInCart }}
+        value={{ cart, addItem, removeItem, clear, isInCart, getTotal, getQuantity }}
       >
         {props.children}
       </CartContext.Provider>
