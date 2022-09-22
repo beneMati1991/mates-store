@@ -4,7 +4,7 @@
     "title": "titleMate1",
     "description": "descriptionMate1",
     "price": 100,
-    "pictureUrl": "mate1.png",
+    "pictureUrl": "https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/mate1.png?alt=media&token=7ee90ae4-dfac-4d90-9e29-8a47079cb596",
     "stock": 5,
     "categoryId": 1
   },
@@ -13,7 +13,7 @@
     "title": "titleMate2",
     "description": "descriptionMate2",
     "price": 200,
-    "pictureUrl": "mate2.png",
+    "pictureUrl": "https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/mate2.png?alt=media&token=67863f1c-9c77-49a0-9d65-04b896f48996",
     "stock": 2,
     "categoryId": 1
   },
@@ -22,7 +22,7 @@
     "title": "titleMate3",
     "description": "descriptionMate3",
     "price": 300,
-    "pictureUrl": "mate3.png",
+    "pictureUrl": "https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/mate3.png?alt=media&token=550f16d0-e1fd-4b8d-a21f-14ac6d97090c",
     "stock": 30,
     "categoryId": 1
   },
@@ -31,7 +31,7 @@
     "title": "titleTermo1",
     "description": "descriptionTermo1",
     "price": 400,
-    "pictureUrl": "termo1.png",
+    "pictureUrl": "https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/termo1.png?alt=media&token=3c67ddc9-2bb1-4dd3-a66a-a792c1cf23f9",
     "stock": 40,
     "categoryId": 2
   },
@@ -40,7 +40,7 @@
     "title": "titleTermo2",
     "description": "descriptionTermo2",
     "price": 500,
-    "pictureUrl": "termo2.png",
+    "pictureUrl": "https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/termo2.png?alt=media&token=0a665f35-8cd8-4841-bede-bec152021bce",
     "stock": 0,
     "categoryId": 2
   }

@@ -25,7 +25,7 @@ const ItemDetail = ({ item,  }) => {
                 <h5 className="card-title">{item.title}</h5>
                 <h6 className="card-subtitle text-muted">{item.title}</h6>
               </div>
-              <img src={`/images/${item.pictureUrl}`} alt="logo" />
+              <img src={`${item.pictureUrl}`} alt="logo" />
             </div>
             <div className="col-md-6">
               <div className="card-body">

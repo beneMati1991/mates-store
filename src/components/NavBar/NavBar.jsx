@@ -12,7 +12,7 @@ function NavBar() {
     <div className="">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-            <Link className='nav-link' to="/"><img src="/images/mate-logo.png" alt="logo" id="logo" /></Link>
+            <Link className='nav-link' to="/"><img src="https://firebasestorage.googleapis.com/v0/b/coderhouse-ecommerce-145a5.appspot.com/o/mate-logo.png?alt=media&token=d8abf437-6aaa-4424-835c-b771127306ac" alt="logo" id="logo" /></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>

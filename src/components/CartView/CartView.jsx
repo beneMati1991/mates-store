@@ -25,7 +25,7 @@ const CartView = () => {
                 <tbody>
                   {cart.map(
                     (itemCart) => <tr key={itemCart.id}>
-                        <th scope="row"><img src={`/images/${itemCart.item.pictureUrl}`} alt="logo" /></th>
+                        <th scope="row"><img src={`${itemCart.item.pictureUrl}`} alt="logo" /></th>
                         <td>{itemCart.item.title}</td>
                         <td>$ {itemCart.item.price}</td>
                         <td>{itemCart.quantity}</td>
