@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from 'react-router-dom';
 
 const CartView = () => {
-  const { cart, removeItem, getTotal, clear } = useContext(CartContext);
+  const { cart, removeItem, getTotal } = useContext(CartContext);
 
   return (
     <>
@@ -40,7 +40,7 @@ const CartView = () => {
                 <h4 className="d-flex flex-column align-items-end">Precio Total: ${getTotal()}</h4>
               </div>
               <div className="d-flex flex-column align-items-end pt-1 pb-5">
-                <Link to="/finCompra"><button className="btn btn-primary" onClick={()=> clear()}>Finalizar compra</button></Link>
+                <Link to="/checkout"><button className="btn btn-primary">Checkout</button></Link>
               </div>
             </div>
           ) : (
