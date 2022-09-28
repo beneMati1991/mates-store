@@ -20,7 +20,7 @@ const Checkout = () => {
     try {
       const col = collection(db, "orders");
       const order = await addDoc(col, data);
-      console.log(order.id)
+      console.log(order.id);
       setOrderId(order.id);
       clear();
     } catch (error) {
@@ -45,7 +45,7 @@ const Checkout = () => {
     const total = getTotal();
     const data = { buyer, items, dia, cantidad, total };
     generateOrder(data);
-    navigate("/finCompra", { state: { orderId: orderId } });
+    //navigate("/finCompra", { state: { orderId: orderId } });
   };
 
   const handleClear = () => {
@@ -56,46 +56,64 @@ const Checkout = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="d-flex flex-column align-items-center">
-          <h2>Finalizando Compra</h2>
-        </div>
-        <div className="d-flex flex-column align-items-center pt-4">
-          <h4>Completar Datos:</h4>
-          <form onSubmit={handleSubmit} className="pt-4">
-            <input
-              type="text"
-              name="Nombre"
-              placeholder="Nombre"
-              value={Nombre}
-              onChange={handleInputChange}
-            />
-            <input
-              type="mail"
-              name="Email"
-              placeholder="Email"
-              value={Email}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              name="Telefono"
-              placeholder="Telefono"
-              value={Telefono}
-              onChange={handleInputChange}
-            />
-            <input
-              type="submit"
-              value="Finalizar Compra"
-              className="btn btn-success"
-            />
-          </form>
+      {!orderId ? (
+        <div className="container">
+          <div className="d-flex flex-column align-items-center">
+            <h2>Finalizando Compra</h2>
+          </div>
+          <div className="d-flex flex-column align-items-center pt-4">
+            <h4>Completar Datos:</h4>
+            <form onSubmit={handleSubmit} className="pt-4">
+              <div className="d-flex flex-column align-items-center">
+                <input
+                  type="text"
+                  name="Nombre"
+                  placeholder="Nombre"
+                  value={Nombre}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="mail"
+                  name="Email"
+                  placeholder="Email"
+                  className="mt-2"
+                  value={Email}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="text"
+                  name="Telefono"
+                  className="mt-2"
+                  placeholder="Telefono"
+                  value={Telefono}
+                  onChange={handleInputChange}
+                />
 
-          <button className="btn btn-danger" onClick={handleClear}>
-            Cancelar Compra
-          </button>
+                <div  className="align-items-center mt-4">
+                  <input
+                    type="submit"
+                    value="Finalizar Compra"
+                    className="btn btn-success"
+                  />
+
+                  <button className="btn btn-danger" onClick={handleClear}>
+                    Cancelar Compra
+                  </button>
+                </div>
+                
+              </div>
+            </form>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="container">
+          <div className="d-flex flex-column align-items-center">
+            <h2>Su order fue generada.</h2>
+            <p>Conservar el número de orden para su retiro.</p>
+            <h4>Nro de orden: {orderId}</h4>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -5,9 +5,10 @@ import Grid from "@mui/material/Grid";
 const ItemList = ({ itemList }) => {
   const [items, setItems] = useState([]);
 
+  //<Grid key={indice} xs={2} sm={3} md={3} >
   useEffect(() => {
     const itemCard = itemList.map((item, indice) => (
-      <Grid key={indice} xs={2} sm={3} md={3} >
+      <Grid key={indice} >
         <Item item={item} />
       </Grid>
     ));
