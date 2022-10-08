@@ -20,7 +20,6 @@ const Checkout = () => {
     try {
       const col = collection(db, "orders");
       const order = await addDoc(col, data);
-      console.log(order.id);
       setOrderId(order.id);
       clear();
     } catch (error) {
@@ -36,21 +35,21 @@ const Checkout = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    const items = cart.map((e) => {
-      return { id: e.id, title: e.item.title, price: e.item.price };
-    });
-    const dia = new Date();
-    const cantidad = getQuantity();
-    const total = getTotal();
-    const data = { buyer, items, dia, cantidad, total };
-    generateOrder(data);
+      e.preventDefault();
+      const items = cart.map((e) => {
+        return { id: e.id, title: e.item.title, price: e.item.price };
+      });
+      const dia = new Date();
+      const cantidad = getQuantity();
+      const total = getTotal();
+      const data = { buyer, items, dia, cantidad, total };
+      generateOrder(data);
+    
     //navigate("/finCompra", { state: { orderId: orderId } });
   };
 
   const handleClear = () => {
     clear();
-    console.log("vacio carrito");
     navigate("/cart");
   };
 
@@ -94,6 +93,8 @@ const Checkout = () => {
                     type="submit"
                     value="Finalizar Compra"
                     className="btn btn-success"
+
+                    disabled={buyer.Nombre==='' || buyer.Email==='' || buyer.Telefono===''}
                   />
 
                   <button className="btn btn-danger" onClick={handleClear}>
